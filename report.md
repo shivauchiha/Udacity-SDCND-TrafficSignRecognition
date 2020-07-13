@@ -152,7 +152,7 @@ I am submitting the project as base objective of the project is achieved.However
 ### Test a Model on New Images
 
 #### 1.Test images choosen from internet
-Below defined test from 2 different distribution.Photographic images as seen in train data and cartronized logo. My guess is even though the network is trained on photographic dataset , if it has learnt good enough features then there will atleast some correct predictions of cartoon data.
+I have downloaded test data from 2 different distribution for german traffic signs.The distributions are of Photographic images similar to  train data and cartronized logo further from train data. My guess is even though the network is trained on photographic dataset , if it has learnt good enough features then there will atleast some correct predictions of cartoon data.
 
 Here are some German traffic signs that I found on the web:
 
@@ -191,5 +191,65 @@ lets take first example.
 first line gives the network prediction priority road
 next we have list of top 5 softmax probabilites.
 Then we have list of sign names.These sign names correspond to above probabilities in the same order.
+
+
+Now lets check 3 cases where the model failed . This will actually give us an idea on how far the model was off from the ground truth.
+
+Case I
+
+| Image                | Prediction                                           |
+|----------------------|------------------------------------------------------|
+| wildlife crossign(c) | Road work (1.00000000e+00)                           |
+|                      | Dangerous curve to the left(2.57462816e-08)          |
+|                      | Dangerous curve to the right(2.61877908e-10)         |
+|                      | Right-of-way at the next intersection(1.96025557e-11)|
+|                      |  Beware of ice/snow(3.54929971e-15)                  |
+
+The prediction was way off and not even close even if we take image morphology into consideration.
+We must note that this image is from a different distribution that was not trained on the network.
+This was a cartoonised logo . Fact that wildlife crossing sign count in our train data was also generally low.
+All these odds stacked on our network made it fail in classifying this sign.
+
+
+
+Case II
+
+| Image                | Prediction                                           |
+|----------------------|------------------------------------------------------|
+| Bicycle Only(c)      | Priority road (0.83650011)                           |
+|                      | Right-of-way at the next intersection(0.15168469)    |
+|                      | Beware of ice/snow(0.00449141)                       |
+|                      | Dangerous curve to the left(0.00190808)              |
+|                      | Vehicles over 3.5 metric tons prohibited(0.00183043) |
+
+Case II is same as CASE I . The model failed to classify it dues to similar lack of data.
+
+
+Case II
+
+| Image                | Prediction                                           |
+|----------------------|------------------------------------------------------|
+| Railway crossing(c)  | Bumpy road (1.00000000e+00)                          |
+|                      | Traffic signals(1.97972572e-08)                      |
+|                      | Bicycles crossing(6.99574816e-12)                    |
+|                      |  General caution(2.73562683e-12)                     |
+|                      | Road work(2.11828775e-12)                            |
+
+Case III is interesting one . This class of sign was never trained on network.I was curious to find one sign board will it find similar. It classify it to be bumpy road with maximum probability. Interesting ly the mountain edges seem to be similar to the upper portion of X in railway crossing. This made the classifier to classify it as bumpy road ?
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
