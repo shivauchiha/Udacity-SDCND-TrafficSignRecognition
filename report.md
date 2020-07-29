@@ -19,14 +19,14 @@ The goals / steps of this project are the following:
 
 [//]: # (Image References)
 
-[image1]: count.jpg "Train Visualization"
+[image1]: count.png "Train Visualization"
 [image2]: count1.png "Valid Visualization"
 [image3]: count2.png "Test Visualization"
-[image4]: ./Mysigns/8x.png "Attention"
-[image5]: ./Mysigns/2x.png "speed limit 30"
-[image6]: ./Mysigns/3x.png "priority road"
-[image7]: ./Mysigns/road_works.png "road works"
-[image8]: ./Mysigns/traffic_light.png "Traffic light"
+[image4]: ./My_signs/8x.png "Attention"
+[image5]: ./My_signs/2x.png "speed limit 30"
+[image6]: ./My_signs/3x.png "priority road"
+[image7]: ./My_signs/road_works.png "road works"
+[image8]: ./My_signs/traffic_light.png "Traffic light"
 
 
 ## Rubric Points
